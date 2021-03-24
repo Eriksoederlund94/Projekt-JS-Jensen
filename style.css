@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./img/rohit-tandon-9wg5jCEPBsw-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.logo {
+  padding: 2rem;
+  font-size: 4rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.form {
+  display: flex;
+  padding: 2rem;
+}
+
+.search {
+  padding: 2rem;
+  font-size: 1rem;
+  max-width: 100%;
+  border: none;
+}
+
+.search-btn {
+  all: unset;
+  font-size: 1rem;
+  padding: 2rem;
+  background: #8e9eab;
+  cursor: pointer;
+}
+
+.search-btn:hover,
+.more-btn:hover {
+  background: #cfdef3;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  min-height: 10vh;
+  background: #8e9eab;
+  text-align: center;
+}
+
+.photo-gallery {
+  display: grid;
+  row-gap: 5rem;
+  column-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+
+.gallery-info p {
+  font-size: 1.2rem;
+}
+
+.gallery-info a {
+  color: #000;
+  text-decoration: none;
+}
+
+.gallery-info p:hover,
+a:hover {
+  color: #fff;
+}
+
+.more-photos {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-btn {
+  all: unset;
+  font-size: 1rem;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  background: #8e9eab;
+  cursor: pointer;
+}
+
+.fa-caret-square-down,
+.fa-search-plus {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.fa-camera {
+  font-size: 3.5rem;
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .search {
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    max-width: 100%;
+    border: none;
+  }
+
+  .search-btn {
+    all: unset;
+    font-size: 0.8rem;
+    padding: 1.5rem;
+    background: #8e9eab;
+    cursor: pointer;
+  }
+
+  .fa-camera {
+    font-size: 3rem;
+  }
+}
