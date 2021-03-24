@@ -16,6 +16,11 @@ let presentSearch;
 // Event Listeners
 searchInput.addEventListener("input", updateInput);
 morePhotosButton.addEventListener("click", loadMoreImg);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  presentSearch = searchInputValue;
+  searchPhoto(searchInputValue);
+});
 
 // Async Functions
 async function fetchApi(url) {
@@ -37,8 +42,8 @@ async function getPhotos() {
 }
 
 async function searchPhoto(search) {
-  apiLink = `https://api.pexels.com/v1/search?query=${search}&per_page=20&page=1`;
   clearInput();
+  apiLink = `https://api.pexels.com/v1/search?query=${search}&per_page=20&page=1`;
   const imgData = await fetchApi(apiLink);
   generateImg(imgData);
 }
@@ -48,7 +53,7 @@ async function loadMoreImg() {
   if (presentSearch) {
     apiLink = `https://api.pexels.com/v1/search?query=${presentSearch}&per_page=20&page=${pageIndex}`;
   } else {
-    apiLink = `https://api.pexels.com/v1/curated?per_page=20&page=1${pageIndex}`;
+    apiLink = `https://api.pexels.com/v1/curated?per_page=20&page=${pageIndex}`;
   }
   const imgData = await fetchApi(apiLink);
   generateImg(imgData);
@@ -71,11 +76,6 @@ function generateImg(imgData) {
 
 function updateInput(event) {
   searchInputValue = event.target.value;
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    presentSearch = searchInputValue;
-    searchPhoto(searchInputValue);
-  });
 }
 
 function clearInput() {
