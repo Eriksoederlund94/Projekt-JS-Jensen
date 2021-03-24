@@ -23,6 +23,22 @@ body {
   font-size: 16px;
 }
 
+nav {
+  min-height: 10vh;
+  background: #8e9eab;
+  text-align: center;
+}
+
+.logo {
+  padding: 2rem;
+  font-size: 4rem;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -34,13 +50,6 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-}
-
-.logo {
-  padding: 2rem;
-  font-size: 4rem;
-  text-decoration: none;
-  color: #fff;
 }
 
 .form {
@@ -72,12 +81,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-nav {
-  min-height: 10vh;
-  background: #8e9eab;
-  text-align: center;
 }
 
 .photo-gallery {
