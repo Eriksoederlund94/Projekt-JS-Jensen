@@ -16,6 +16,11 @@ let presentSearch;
 // Event Listeners
 searchInput.addEventListener("input", updateInput);
 morePhotosButton.addEventListener("click", loadMoreImg);
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  presentSearch = searchInputValue;
+  searchPhoto(searchInputValue);
+});
 
 // Async Functions
 async function fetchApi(url) {
@@ -71,11 +76,6 @@ function generateImg(imgData) {
 
 function updateInput(event) {
   searchInputValue = event.target.value;
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    presentSearch = searchInputValue;
-    searchPhoto(searchInputValue);
-  });
 }
 
 function clearInput() {
